@@ -1,0 +1,14 @@
+package calculations
+
+import ()
+
+const (
+	DbName   = ""
+	username = ""
+	password = ""
+	url      = ""
+	port     = ""
+	mongoUrl = "mongodb://" + username + ":" + password + "@" + url + ":" + port + "/" + DbName
+	collection = ""
+)
+
