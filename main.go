@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"calculations/calculations"
+	"github.com/ChuckHa/calculations/calculations"
 //	"labix.org/v2/mgo/bson"
 )
 
@@ -35,7 +35,7 @@ func main () {
 	}
 
 	// Print each object
-	fmt.Println(result)
+//	fmt.Println(result)
 
 	/*
 	// Print each objects _id
@@ -43,6 +43,9 @@ func main () {
 		fmt.Println(result[i].Id.String())
 	}
 	*/
+	for i := 0; i < len(result); i++ {
+		fmt.Println(result[i].Escaped())
+	}
 
 	/*
 	// Find an object by ID

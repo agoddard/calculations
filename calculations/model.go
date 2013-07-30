@@ -4,6 +4,7 @@ import (
 	"labix.org/v2/mgo"
 	"labix.org/v2/mgo/bson"
 	"time"
+	"strings"
 )
 
 type Calculation struct {
@@ -34,4 +35,9 @@ func Get(id string, collection *mgo.Collection) (c *Calculation, err error) {
 func (c *Calculation) Save(collection *mgo.Collection) (err error) {
 	err = collection.Insert(c)
 	return err
+}
+
+func (c *Calculation) Escaped() string {
+	r := strings.NewReplacer("+", "add", "*", "mul", "-", "sub", "/", "div")
+	return r.Replace(c.Calculation)
 }
