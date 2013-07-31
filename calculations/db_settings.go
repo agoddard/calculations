@@ -1,9 +1,10 @@
 package calculations
 
 import ()
+import "os"
 
 const (
-	mongoUrl = Getenv("MONGOHQ_URL")
+	mongoUrl = os.Getenv("MONGOHQ_URL")
 	collection = "calculations"
 )
 
