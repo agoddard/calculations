@@ -3,8 +3,7 @@ package calculations
 import ()
 import "os"
 
-const (
+var (
 	mongoUrl = os.Getenv("MONGOHQ_URL")
 	collection = "calculations"
 )
-
